@@ -129,15 +129,15 @@
             <img src="preview.png" alt="Minecraft 游戏宣传图">
         </div>
         <div class="actions">
-            <!-- 移除了 target="_blank"，在当前标签页打开 -->
+            <!-- 在线预览：跳转到 game.html，在当前页打开 -->
             <a href="game.html" class="btn" id="btn-play" title="打开游戏">
                 <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
                 在线预览
             </a>
-            <!-- 移除了 target="_blank"，在当前标签页打开 -->
-            <a href="download.html" class="btn btn-download" id="btn-download" title="选择下载版本">
+            <!-- 下载离线版：直接下载 game.html，不跳转 -->
+            <a href="game.html" download="Myao1022_Minecraft_Web.html" class="btn btn-download" id="btn-download" title="下载离线网页版">
                 <svg viewBox="0 0 24 24"><path d="M5 20h14M12 4v12m-4-4l4 4 4-4"/></svg>
-                下载离线版 (EXE或HTML)
+                下载离线版 (HTML)
             </a>
         </div>
         <div class="footer-note">在线预览即开即玩 · 离线版无需网络 · 由 Myao1022 提供</div>
@@ -180,11 +180,11 @@
 
             document.getElementById('btn-play').addEventListener('click', function(e) {
                 playClickSound();
-                // 注意：这里不阻止默认行为，点击后会跳转
+                // 不阻止默认行为，正常跳转
             });
             document.getElementById('btn-download').addEventListener('click', function(e) {
                 playClickSound();
-                // 不阻止默认行为
+                // 不阻止默认行为，触发下载
             });
         })();
     </script>
