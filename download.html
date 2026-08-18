@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>选择下载版本 · Myao1022</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            background: #2d2d2d;
+            font-family: 'Press Start 2P', monospace;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+                repeating-linear-gradient(45deg, #7c5a3a 0px, #7c5a3a 2px, #5c3d21 2px, #5c3d21 4px);
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #c6c6c6;
+            border: 8px solid #8b8b8b;
+            box-shadow: inset -4px -4px 0 #4c4c4c, inset 4px 4px 0 #ffffff, 0 20px 60px rgba(0,0,0,0.9);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 { font-size:22px; color:#2a2a2a; text-shadow:2px 2px 0 #aaa; margin-bottom:10px; }
+        .sub { font-size:12px; color:#4a4a4a; margin-bottom:30px; border-bottom:4px solid #8a8a8a; padding-bottom:15px; }
+        .choices { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin:20px 0; }
+        .choice-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 30px 20px;
+            width: 220px;
+            background: #3a3a3a;
+            border: 6px solid #6a6a6a;
+            box-shadow: inset -4px -4px 0 #1a1a1a, inset 4px 4px 0 #8a8a8a, 0 8px 0 #2a2a2a;
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: all 0.05s linear;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .choice-btn:hover { transform:translateY(3px); box-shadow:inset -4px -4px 0 #1a1a1a, inset 4px 4px 0 #8a8a8a, 0 5px 0 #2a2a2a; }
+        .choice-btn:active { transform:translateY(8px); box-shadow:inset -4px -4px 0 #1a1a1a, inset 4px 4px 0 #8a8a8a, 0 0px 0 #2a2a2a; }
+        .choice-btn .icon { font-size:48px; line-height:1; }
+        .choice-btn .label { font-size:12px; letter-spacing:1px; }
+        .choice-btn .size { font-size:9px; color:#aaa; margin-top:4px; }
+        .btn-html {
+            background: #3a7a3a;
+            border-color: #6bc06b;
+            box-shadow: inset -4px -4px 0 #1d4a1d, inset 4px 4px 0 #8fd88f, 0 8px 0 #1d3a1d;
+        }
+        .btn-html:hover { box-shadow:inset -4px -4px 0 #1d4a1d, inset 4px 4px 0 #8fd88f, 0 5px 0 #1d3a1d; }
+        .btn-html:active { box-shadow:inset -4px -4px 0 #1d4a1d, inset 4px 4px 0 #8fd88f, 0 0px 0 #1d3a1d; }
+        .btn-exe {
+            background: #2a6b8a;
+            border-color: #4a9fc7;
+            box-shadow: inset -4px -4px 0 #124a5a, inset 4px 4px 0 #7ac7e7, 0 8px 0 #0d2a3a;
+        }
+        .btn-exe:hover { box-shadow:inset -4px -4px 0 #124a5a, inset 4px 4px 0 #7ac7e7, 0 5px 0 #0d2a3a; }
+        .btn-exe:active { box-shadow:inset -4px -4px 0 #124a5a, inset 4px 4px 0 #7ac7e7, 0 0px 0 #0d2a3a; }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #4a4a6a;
+            font-size: 10px;
+            text-decoration: underline;
+            font-family: monospace;
+            cursor: pointer;
+        }
+        .back-link:hover { color:#1a1a3a; }
+        @media (max-width:600px) { .choice-btn { width:100%; padding:20px; } .container { padding:15px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⬇ 选择下载版本</h1>
+        <div class="sub">请选择您需要的离线版本</div>
+        <div class="choices">
+            <a href="game.html" download="Myao1022_Minecraft_Web.html" class="choice-btn btn-html" id="download-html">
+                <span class="icon">🌐</span>
+                <span class="label">HTML 离线版</span>
+                <span class="size">纯网页 · 即开即玩</span>
+            </a>
+            <a href="minecraft.exe" download="Myao1022_Minecraft_Offline.exe" class="choice-btn btn-exe" id="download-exe">
+                <span class="icon">⚙️</span>
+                <span class="label">EXE 离线版</span>
+                <span class="size">独立程序 · 无需浏览器</span>
+            </a>
+        </div>
+        <a href="index.html" class="back-link">← 返回主页</a>
+    </div>
+
+    <!-- 背景音乐（自动循环，无控制按钮） -->
+    <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+
+    <script>
+        (function() {
+            // ----- 背景音乐自动播放 -----
+            var bgAudio = document.getElementById('bg-music');
+            var bgStarted = false;
+            function tryPlayBg() {
+                if (bgStarted) return;
+                bgAudio.play().then(function() { bgStarted = true; }).catch(function(e) {});
+            }
+            tryPlayBg();
+            function handleFirstClick() {
+                if (!bgStarted) {
+                    bgAudio.play().then(function() { bgStarted = true; }).catch(function(e) {});
+                }
+                document.removeEventListener('click', handleFirstClick);
+                document.removeEventListener('touchstart', handleFirstClick);
+            }
+            document.addEventListener('click', handleFirstClick);
+            document.addEventListener('touchstart', handleFirstClick);
+            bgAudio.addEventListener('ended', function() {
+                bgAudio.currentTime = 0;
+                bgAudio.play();
+            });
+
+            // ----- 按钮点击音效（只播放一次） -----
+            function playClickSound() {
+                var sound = new Audio('按钮点.mp3');
+                sound.play().catch(function(e) {});
+            }
+
+            document.getElementById('download-html').addEventListener('click', function(e) {
+                playClickSound();
+            });
+            document.getElementById('download-exe').addEventListener('click', function(e) {
+                playClickSound();
+            });
+        })();
+    </script>
+</body>
+</html>
